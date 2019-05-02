@@ -12,4 +12,31 @@ object KataScalaRegex {
     ???
   }
 
+  /**
+    * We want the first groups of s matching "string"
+    * @param s
+    * @return a matching substring of s
+    */
+  def getMatchingGroupString(s: String): Option[String] = {
+    ???
+  }
+
+  /**
+    * We want the first groups of s matching a number
+    * @param s
+    * @return a matching substring of s
+    */
+  def getMatchingGroupNumber(s: String): Option[String] = {
+    ???
+  }
+
+  /**
+    * We want all the groups of s matching a number
+    * @param s
+    * @return a matching substring of s
+    */
+  def getMatchingGroupNumbers(s: String): List[String] = {
+    ???
+  }
+
 }
