@@ -23,7 +23,12 @@ object KataScalaRegex {
     * @return a matching substring of s
     */
   def getMatchingGroupString(s: String): Option[String] = {
-    ???
+    val reg = """.*(string).*""".r
+
+    s match {
+      case reg(group) => Some(group)
+      case _ => None
+    }
   }
 
   /**
