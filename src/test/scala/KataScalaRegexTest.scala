@@ -104,95 +104,96 @@ class GetMatchingGroupStringTest extends FunSuite with RegexTestTrait {
     //THEN
     assert(result.isEmpty)
   }
+}
 
 
-  //----------------------------------------------------------------------------
-  //        getMatchingGroupNumber
-  //----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+//        getMatchingGroupNumber
+//----------------------------------------------------------------------------
 
-  @RunWith(classOf[JUnitRunner])
-  class GetMatchingGroupNumberTest extends FunSuite with RegexTestTrait {
+@RunWith(classOf[JUnitRunner])
+class GetMatchingGroupNumberTest extends FunSuite with RegexTestTrait {
 
-    test("should_return_matching_group") {
-      //GIVEN
-      val s = "I_have_99_bugs"
-      val expectedGroup = "99"
+  test("should_return_matching_group") {
+    //GIVEN
+    val s = "I_have_99_bugs"
+    val expectedGroup = "99"
 
-      //WHEN
-      val result = kata.getMatchingGroupNumber(s)
+    //WHEN
+    val result = kata.getMatchingGroupNumber(s)
 
-      //THEN
-      assert(result.nonEmpty)
-      assert(result.get == expectedGroup)
-    }
-
-    test("should_return_only_one_group") {
-      //GIVEN
-      val s = "I_have_99_bugs_but_this_1_is_not"
-      val expectedGroup = "99"
-
-      //WHEN
-      val result = kata.getMatchingGroupNumber(s)
-
-      //THEN
-      assert(result.nonEmpty)
-      assert(result.get == expectedGroup)
-    }
-
-    test("should_return_None_if_no_matching_occurred") {
-      //GIVEN
-      val s = "I_have_absolutely_no_bugs"
-
-      //WHEN
-      val result = kata.getMatchingGroupNumber(s)
-
-      //THEN
-      assert(result.isEmpty)
-    }
+    //THEN
+    assert(result.nonEmpty)
+    assert(result.get == expectedGroup)
   }
 
+  test("should_return_only_one_group") {
+    //GIVEN
+    val s = "I_have_99_bugs_but_this_1_is_not"
+    val expectedGroup = "99"
 
-  //----------------------------------------------------------------------------
-  //        getMatchingGroupNumbers
-  //----------------------------------------------------------------------------
+    //WHEN
+    val result = kata.getMatchingGroupNumber(s)
 
+    //THEN
+    assert(result.nonEmpty)
+    assert(result.get == expectedGroup)
+  }
 
-  @RunWith(classOf[JUnitRunner])
-  class GetMatchingGroupNumbersTest extends FunSuite with RegexTestTrait {
+  test("should_return_None_if_no_matching_occurred") {
+    //GIVEN
+    val s = "I_have_absolutely_no_bugs"
 
-    test("should_return_one_matching_group") {
-      //GIVEN
-      val s = "I_have_99_bugs"
-      val expectedGroup = "99" :: Nil
+    //WHEN
+    val result = kata.getMatchingGroupNumber(s)
 
-      //WHEN
-      val result = kata.getMatchingGroupNumbers(s)
-
-      //THEN
-      assert(result == expectedGroup)
-    }
-
-    test("should_return_matching_groups") {
-      //GIVEN
-      val s = "I_have_99_bugs_but_this_1_is_not"
-      val expectedGroup = "99" :: "1" :: Nil
-
-      //WHEN
-      val result = kata.getMatchingGroupNumbers(s)
-
-      //THEN
-      assert(result == expectedGroup)
-    }
-
-    test("should_return_empty_list_if_no_matching_occurred") {
-      //GIVEN
-      val s = "I_have_no_bugs"
-
-      //WHEN
-      val result = kata.getMatchingGroupNumbers(s)
-
-      //THEN
-      assert(result.isEmpty)
-    }
+    //THEN
+    assert(result.isEmpty)
   }
 }
+
+
+//----------------------------------------------------------------------------
+//        getMatchingGroupNumbers
+//----------------------------------------------------------------------------
+
+
+@RunWith(classOf[JUnitRunner])
+class GetMatchingGroupNumbersTest extends FunSuite with RegexTestTrait {
+
+  test("should_return_one_matching_group") {
+    //GIVEN
+    val s = "I_have_99_bugs"
+    val expectedGroup = "99" :: Nil
+
+    //WHEN
+    val result = kata.getMatchingGroupNumbers(s)
+
+    //THEN
+    assert(result == expectedGroup)
+  }
+
+  test("should_return_matching_groups") {
+    //GIVEN
+    val s = "I_have_99_bugs_but_this_1_is_not"
+    val expectedGroup = "99" :: "1" :: Nil
+
+    //WHEN
+    val result = kata.getMatchingGroupNumbers(s)
+
+    //THEN
+    assert(result == expectedGroup)
+  }
+
+  test("should_return_empty_list_if_no_matching_occurred") {
+    //GIVEN
+    val s = "I_have_no_bugs"
+
+    //WHEN
+    val result = kata.getMatchingGroupNumbers(s)
+
+    //THEN
+    assert(result.isEmpty)
+  }
+}
+
