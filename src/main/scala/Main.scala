@@ -37,7 +37,7 @@ object KataScalaRegex {
     * @return a matching substring of s
     */
   def getMatchingGroupNumber(s: String): Option[String] = {
-    val reg = """.*([0-9]*).*""".r
+    val reg = """.*(\d+).*""".r
 
     s match {
       case reg(number) => Some(number)
@@ -51,7 +51,8 @@ object KataScalaRegex {
     * @return a matching substring of s
     */
   def getMatchingGroupNumbers(s: String): List[String] = {
-    ???
+    val reg = """(\d+)""".r
+    reg.findAllMatchIn(s).map(_.toString).toList
   }
 
 }
