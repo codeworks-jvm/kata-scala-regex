@@ -9,7 +9,13 @@ object KataScalaRegex {
     * @return true if the string matches, false otherwise
     */
   def matchSimpleString(s: String): Boolean = {
-    ???
+    val reg = "SimpleString".r
+    s match  {
+
+      case reg(_*) => true
+      case _ => false
+
+    }
   }
 
   /**
