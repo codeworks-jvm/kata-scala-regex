@@ -2,16 +2,18 @@ import org.junit.runner.RunWith
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
 
-lazy val kata = KataScalaRegex;
 
 
+trait RegexTestTrait {
+  val kata = KataScalaRegex
+}
 
 //----------------------------------------------------------------------------
 //       matchSimpleString
 //----------------------------------------------------------------------------
 
 @RunWith(classOf[JUnitRunner])
-class MatchSimpleStringTest extends FunSuite {
+class MatchSimpleStringTest extends FunSuite with RegexTestTrait {
 
   test("should_match_exact_string") {
     //GIVEN
@@ -64,7 +66,7 @@ class MatchSimpleStringTest extends FunSuite {
 //----------------------------------------------------------------------------
 
 @RunWith(classOf[JUnitRunner])
-class GetMatchingGroupStringTest extends FunSuite {
+class GetMatchingGroupStringTest extends FunSuite with RegexTestTrait {
 
   test("should_return_matching_group") {
     //GIVEN
@@ -109,7 +111,7 @@ class GetMatchingGroupStringTest extends FunSuite {
   //----------------------------------------------------------------------------
 
   @RunWith(classOf[JUnitRunner])
-  class GetMatchingGroupNumberTest extends FunSuite {
+  class GetMatchingGroupNumberTest extends FunSuite with RegexTestTrait {
 
     test("should_return_matching_group") {
       //GIVEN
@@ -156,7 +158,7 @@ class GetMatchingGroupStringTest extends FunSuite {
 
 
   @RunWith(classOf[JUnitRunner])
-  class GetMatchingGroupNumbersTest extends FunSuite {
+  class GetMatchingGroupNumbersTest extends FunSuite with RegexTestTrait {
 
     test("should_return_one_matching_group") {
       //GIVEN
